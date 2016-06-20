@@ -11,7 +11,7 @@ router.get('/reg', function(req, res) {
 });
 
 router.post('/reg', function(req, res) {
-
+	console.log("reg");
 });
 
 router.get('/login', function(req, res) {
