@@ -1,5 +1,7 @@
+'use strict';
 var mongoose = require('mongoose');
-var config = require('./../config/config');
+var config = require('../config/config');
+var logger = require('../common/logger');
 
 mongoose.connect(config.mongodb, function(err){
   if(err) {
@@ -8,6 +10,6 @@ mongoose.connect(config.mongodb, function(err){
 });
 
 //models
-require('./User');
+require('./user');
 
 exports.User = mongoose.model('User');
