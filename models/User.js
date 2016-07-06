@@ -1,7 +1,8 @@
 var mongoose = require('mongoose');
+mongoose.promise = require('bluebird');
 var Schema = mongoose.Schema;
 var UserSchema = new Schema({
-  userId:Number,
+  userName:String,
   password:String,
   createTime:Date,
   lastLoginTime:Date,

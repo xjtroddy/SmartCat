@@ -10,12 +10,12 @@ var router = express.Router();
 router.get('/', site.index);
 
 //sign controllers
-//if (config.allowReg) {
+if (config.allowReg) {
 router.get('/signup', sign.showSignup);  // 跳转到注册页面
-  //router.post('/signup', sign.signup);  // 提交注册信息
-//} else {
-  //router.get('/signup', configMiddleware.github, passport.authenticate('github'));  // 进行微信
-//}
+router.post('/signup', sign.signup);  // 提交注册信息
+} else {
+  router.get('/signup', configMiddleware.github, passport.authenticate('github'));  // 进行微信
+}
 // router.post('/signout', sign.signout);  // 登出
 // router.get('/signin', sign.showLogin);  // 进入登录页面
 // router.post('/signin', sign.login);  // 登录校验
